@@ -1,0 +1,19 @@
+{
+  "name": "GEO MIND AI",
+  "short_name": "GEO MIND",
+  "description": "Personal Geomatics, GIS and Coding Agent",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

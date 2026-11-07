@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="GEO MIND AI - مساعدك الشخصي للجيوماتكس والبرمجة">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>GEO MIND AI</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">G</div>
+        <div><strong>GEO MIND AI</strong><small>Personal Intelligence Agent</small></div>
+      </div>
+      <button class="new-chat" id="newChat">＋ محادثة جديدة</button>
+      <div class="nav-label">مساحة العمل</div>
+      <button class="nav-item active" data-view="chat">◉ <span>المساعد الذكي</span></button>
+      <button class="nav-item" data-view="gis">⌖ <span>GIS والجيوماتكس</span></button>
+      <button class="nav-item" data-view="remote">▧ <span>الاستشعار عن بُعد</span></button>
+      <button class="nav-item" data-view="survey">⌁ <span>المساحة والرفع</span></button>
+      <button class="nav-item" data-view="coding">⌘ <span>استوديو البرمجة</span></button>
+      <button class="nav-item" data-view="projects">▤ <span>المشروعات والملفات</span></button>
+      <div class="sidebar-bottom">
+        <div class="status"><span class="status-dot"></span><span id="connectionText">الواجهة تعمل محليًا</span></div>
+        <button class="nav-item" data-view="settings">⚙ <span>الإعدادات</span></button>
+        <small>GEO MIND AI · إصدار 0.1</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="القائمة">☰</button>
+        <div class="top-title"><span class="online-dot"></span><span id="topTitle">المساعد الذكي</span></div>
+        <button class="icon-btn" id="themeBtn" aria-label="تغيير المظهر">◐</button>
+      </header>
+
+      <section class="view active" id="view-chat">
+        <div class="welcome" id="welcome">
+          <div class="hero-orb">✦</div>
+          <div class="eyebrow">YOUR PERSONAL GEO & CODE AGENT</div>
+          <h1>أهلاً بك في <span>GEO MIND AI</span></h1>
+          <p>مساعدك الشخصي للجيوماتكس ونظم المعلومات الجغرافية والاستشعار عن بُعد والمساحة والبرمجة.</p>
+          <div class="quick-grid">
+            <button class="quick-card" data-prompt="اشرح لي أساسيات التحليل المكاني في GIS مع مثال عملي."><b>⌖ GIS</b><small>تحليل مكاني وخرائط</small></button>
+            <button class="quick-card" data-prompt="اشرح خطوات حساب NDVI من صورة Sentinel-2."><b>▧ Remote Sensing</b><small>تحليل المرئيات الفضائية</small></button>
+            <button class="quick-card" data-prompt="اشرح خطوات تنفيذ ميزانية مساحية وحساب المناسيب."><b>⌁ Surveying</b><small>حسابات وأعمال مساحة</small></button>
+            <button class="quick-card" data-prompt="اكتب مثال Python منظمًا مع اختبارات تلقائية واشرح طريقة تشغيله."><b>⌘ Coding</b><small>كتابة واختبار الأكواد</small></button>
+          </div>
+          <div class="notice">هذه نسخة تأسيسية: الواجهة جاهزة، أما إجابات النموذج الذكي فتحتاج ربط محرك AI من الإعدادات.</div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+        <form class="composer" id="chatForm">
+          <textarea id="promptInput" rows="1" placeholder="اكتب سؤالك أو المهمة التي تريد تنفيذها..." required></textarea>
+          <div class="composer-tools">
+            <span>GEO MIND · راجع النتائج قبل اعتمادها</span>
+            <button class="send-btn" type="submit" aria-label="إرسال">➤</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="view" id="view-gis">
+        <div class="page-head"><div class="eyebrow">GEOSPATIAL WORKSPACE</div><h1>GIS والجيوماتكس</h1><p>مساحة مخصصة للتحليل المكاني وإدارة البيانات والخرائط.</p></div>
+        <div class="tool-grid">
+          <article class="tool-card"><span>⌖</span><h3>التحليل المكاني</h3><p>Buffer، Overlay، Spatial Join وتحليل العلاقات المكانية.</p><em>قيد التجهيز</em></article>
+          <article class="tool-card"><span>▦</span><h3>البيانات الجغرافية</h3><p>GeoJSON وShapefile وGeoPackage وأنظمة الإحداثيات.</p><em>قيد التجهيز</em></article>
+          <article class="tool-card"><span>◫</span><h3>قواعد البيانات</h3><p>مفاهيم PostGIS وتنظيم قواعد البيانات المكانية.</p><em>قيد التجهيز</em></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-remote">
+        <div class="page-head"><div class="eyebrow">EARTH OBSERVATION</div><h1>الاستشعار عن بُعد</h1><p>تحليل الصور الفضائية ومؤشرات الغطاء الأرضي.</p></div>
+        <div class="tool-grid">
+          <article class="tool-card"><span>▧</span><h3>Sentinel & Landsat</h3><p>التعرف على الحزم ومصادر البيانات ومعالجة المرئيات.</p><em>قيد التجهيز</em></article>
+          <article class="tool-card"><span>◩</span><h3>المؤشرات الطيفية</h3><p>NDVI وNDWI ومؤشرات أخرى مع توضيح المعادلات.</p><em>قيد التجهيز</em></article>
+          <article class="tool-card"><span>▤</span><h3>تصنيف الصور</h3><p>التصنيف ومقارنة التغيرات والتحقق من الدقة.</p><em>قيد التجهيز</em></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-survey">
+        <div class="page-head"><div class="eyebrow">LAND SURVEYING</div><h1>المساحة والرفع</h1><p>أدوات وحسابات مساحية مع إظهار خطوات الحل.</p></div>
+        <div class="tool-grid">
+          <article class="tool-card"><span>⌁</span><h3>الميزانية</h3><p>المناسيب وقراءات القامة ودفتر الميزانية.</p><em>قيد التجهيز</em></article>
+          <article class="tool-card"><span>⌖</span><h3>الترافيرس</h3><p>الإحداثيات والانحرافات وفحص الإقفال.</p><em>قيد التجهيز</em></article>
+          <article class="tool-card"><span>▱</span><h3>المساحات والكميات</h3><p>حساب المساحات والحجوم ومراجعة الوحدات.</p><em>قيد التجهيز</em></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-coding">
+        <div class="page-head"><div class="eyebrow">DEVELOPMENT WORKSPACE</div><h1>استوديو البرمجة</h1><p>مساعد كتابة الأكواد ومراجعتها وتجهيز الاختبارات.</p></div>
+        <div class="tool-grid">
+          <article class="tool-card"><span>⌘</span><h3>مولّد الأكواد</h3><p>Python وC++ وJavaScript وواجهات الويب وSQL.</p><em>قيد التجهيز</em></article>
+          <article class="tool-card"><span>✓</span><h3>مراجعة واختبار</h3><p>اختبارات وحدات وتحليل أخطاء ومراجعة جودة الكود.</p><em>قيد التجهيز</em></article>
+          <article class="tool-card"><span>▣</span><h3>إدارة الملفات</h3><p>هيكلة المشروعات وقراءة الملفات وتجهيز الحزم.</p><em>قيد التجهيز</em></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-projects">
+        <div class="page-head"><div class="eyebrow">YOUR WORK</div><h1>المشروعات والملفات</h1><p>نسخة أولية لحفظ قائمة مشروعاتك على هذا الجهاز.</p></div>
+        <div class="panel">
+          <label for="projectName">اسم المشروع</label>
+          <div class="inline-form"><input id="projectName" placeholder="مثال: تحليل NDVI لمنطقة المنيا"><button class="primary-btn" id="addProject">إضافة</button></div>
+          <div id="projectList" class="project-list"><p class="muted">لا توجد مشروعات محفوظة بعد.</p></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-settings">
+        <div class="page-head"><div class="eyebrow">CONFIGURATION</div><h1>الإعدادات</h1><p>إعداد الاتصال بمحرك الذكاء الاصطناعي.</p></div>
+        <div class="panel">
+          <label for="apiUrl">رابط API الخاص بمحرك GEO MIND</label>
+          <input id="apiUrl" type="url" placeholder="https://your-api.example.com">
+          <small class="muted">اتركه فارغًا إلى أن يتم نشر Backend. لا تضع مفاتيح API السرية هنا.</small>
+          <label for="displayName">اسم المساعد</label>
+          <input id="displayName" value="GEO MIND AI">
+          <button class="primary-btn" id="saveSettings">حفظ الإعدادات</button>
+          <div class="notice">لا توجد خدمة ذكاء اصطناعي متصلة حاليًا. سنضيف الاتصال بعد نشر الخادم وتأمينه.</div>
+        </div>
+      </section>
+      <footer class="footer">GEO MIND AI · Built for Geomatics, GIS & Software Engineering</footer>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
