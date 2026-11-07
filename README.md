@@ -1,33 +1,16 @@
-# GEO MIND AI — Mobile-first starter v0.1
+# GEO MIND AI API — v0.1
 
-واجهة عربية RTL متوافقة مع الهاتف + هيكل API أولي.
+## Run locally
+```bash
+python -m venv .venv
+# Windows:
+.venv\Scripts\activate
+# macOS/Linux:
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --host 0.0.0.0 --port 8000
+```
 
-## ما يعمل الآن
-- واجهة PWA قابلة للتثبيت من المتصفح.
-- تنقل بين أقسام GIS والاستشعار عن بعد والمساحة والبرمجة.
-- حفظ قائمة مشروعات محليًا في المتصفح.
-- إعداد رابط API.
-- Backend أولي مع `/health` و`/api/chat`.
+Health check: `http://127.0.0.1:8000/health`
 
-## ما لم يُنفذ بعد
-- لا يوجد نموذج ذكاء اصطناعي متصل.
-- لا يوجد تنفيذ أكواد أو أدوات GIS فعلية.
-- لا توجد ذاكرة سحابية أو تسجيل دخول.
-- أقسام التخصصات واجهات تأسيسية وليست محركات تحليل.
-
-## النشر من الهاتف
-1. أنشئ مستودع GitHub جديدًا باسم `geo-mind-ai`.
-2. ارفع محتويات مجلد `frontend` إلى جذر المستودع (بما فيها `index.html`).
-3. من Settings ثم Pages اختر Deploy from a branch، وحدد `main` و`/ (root)`.
-4. انتظر رابط GitHub Pages وافتحه من Chrome على الهاتف.
-5. من قائمة Chrome اختر Add to Home screen أو Install app إن ظهر الخيار.
-
-## Backend
-يوجد هيكل FastAPI في مجلد `backend`. يحتاج استضافة Python منفصلة. لا تضع أي مفاتيح سرية في ملفات الواجهة أو مستودع عام.
-
-## الخطوات القادمة
-1. نشر الواجهة والتحقق منها على الهاتف.
-2. اختيار استضافة مجانية مناسبة للـ API مع معرفة حدود النوم والموارد.
-3. ربط نموذج مفتوح المصدر من جهة الخادم.
-4. إضافة المصادقة والذاكرة.
-5. بناء الأدوات واختبارات كل أداة قبل السماح للوكيل بتشغيلها.
+This is an API scaffold, not a connected AI agent yet. Do not expose it publicly with wildcard CORS or without authentication/rate limits. Do not put model-provider secrets in the frontend.
